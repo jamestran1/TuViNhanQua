@@ -1,7 +1,7 @@
-# BIÊN BẢN THẢO LUẬN DỰ ÁN TỬ VI NHÂN QUẢ (Cập nhật 20:33 08/03/2026)
+# BIÊN BẢN THẢO LUẬN DỰ ÁN TỬ VI NHÂN QUẢ (Cập nhật 20:35 08/03/2026)
 
-## Cuộc họp 5: Logic AI Phân tích lá số
-- **SE-B:** Xây dựng phương thức `AnalyzeKarmicImpact` để gửi dữ liệu lá số (JSON) cho AI.
-- **PO:** Yêu cầu AI không được dùng từ "Mê tín" mà phải dùng "Khoa học luận giải tinh tú".
-- **QA:** Nhắc nhở: AI cần có giới hạn số từ (max 500 words) để tránh bị cắt ngang do token limit.
-- **Quyết định:** Thêm tham số `max_tokens: 1024` và `temperature: 0.7` cho API Gemini để câu trả lời vừa sáng tạo vừa điềm tĩnh.
+## Cuộc họp 6: Dữ liệu mẫu (Mock Data) để hoàn thiện UI
+- **SE-F:** Yêu cầu Mock Data có đầy đủ các trường hợp: cung có nhiều sao, cung vô chính diệu.
+- **SE-B:** Đồng ý tạo dữ liệu mẫu cho bộ "Sát Phá Tham" - bộ sao mạnh mẽ nhất để test giao diện.
+- **QA:** Yêu cầu mock data phải có lỗi (missing data) để test khả năng xử lý lỗi của React Component.
+- **Quyết định:** Tạo file `mockChart.ts` trong thư mục `src/web/tuvi-web/src/data/`.
