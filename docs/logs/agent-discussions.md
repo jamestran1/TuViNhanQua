@@ -1,13 +1,11 @@
-# BIÊN BẢN THẢO LUẬN DỰ ÁN TỬ VI NHÂN QUẢ (Cập nhật 20:29 08/03/2026)
+# BIÊN BẢN THẢO LUẬN DỰ ÁN TỬ VI NHÂN QUẢ (Cập nhật 20:31 08/03/2026)
 
-## Cuộc họp 1: Chọn Layout cho Mệnh Bàn (Chart Layout)
-- **DS:** Muốn Hình tròn (Circular) cho "huyền bí".
-- **SE-F:** Phản đối vì CSS hình tròn cực khó nhằn trên màn hình nhỏ.
-- **SE-B:** Ủng hộ Hình tròn vì logic tọa độ góc thuận tiện hơn.
-- **PO:** Phán quyết: Hình tròn (Circular) - Thể hiện bánh xe Luân hồi của Phật giáo.
-- **Quyết định:** SE-F chấp nhận, sử dụng `transform: rotate` cho 12 cung.
+## Cuộc họp 3: Tích hợp AI vào Backend
+- **SE-B:** Gặp lỗi khi cài đặt thư viện SDK Google AI.
+- **Quyết định:** Chuyển sang dùng `HttpClient` và gọi trực tiếp Gemini REST API. Cách này giúp code nhẹ hơn và dễ dàng debug lỗi mạng hơn.
+- **PO:** Yêu cầu thêm cơ chế "Caching" cho lời giải AI để tiết kiệm chi phí API khi người dùng xem đi xem lại một lá số.
 
-## Cuộc họp 2: Thuật toán đổi lịch Âm-Dương (Lunar-Solar Converter)
-- **SE-B:** Đề xuất dùng thư viện mã nguồn mở để đảm bảo độ chính xác của thiên văn.
-- **QA:** Yêu cầu kiểm tra sự sai lệch giữa giờ Việt Nam và giờ Bắc Kinh để tránh an sao sai.
-- **PO:** Chốt: Sử dụng giờ Hà Nội (GMT+7) cho mọi tính toán.
+## Cuộc họp 4: Triển khai UI Mệnh Bàn hình tròn
+- **DS:** Cung cấp thông số: Tâm vòng tròn là 50%, bán kính các cung là 40%.
+- **SE-F:** Đề xuất dùng `absolute positioning` kết hợp `transform-origin` tại tâm để xoay 12 cung chính xác.
+- **Quyết định:** Sử dụng `Framer Motion` cho toàn bộ animation của Mệnh Bàn.
