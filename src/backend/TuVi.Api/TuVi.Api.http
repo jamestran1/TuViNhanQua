@@ -1,0 +1,6 @@
+@TuVi.Api_HostAddress = http://localhost:5042
+
+GET {{TuVi.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

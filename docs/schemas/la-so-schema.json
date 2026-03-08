@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LaSoTuVi",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "gender": { "enum": ["Male", "Female"] },
+        "birthDateSolar": { "type": "string", "format": "date-time" },
+        "birthDateLunar": { "type": "string" },
+        "lunarYear": { "type": "string" },
+        "lunarMonth": { "type": "string" },
+        "lunarDay": { "type": "string" },
+        "lunarHour": { "type": "string" },
+        "element": { "type": "string", "description": "Mệnh (ví dụ: Hải Trung Kim)" },
+        " cục": { "type": "string", "description": "Cục (ví dụ: Thủy Nhị Cục)" }
+      },
+      "required": ["name", "gender", "birthDateSolar"]
+    },
+    "palaces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "minimum": 0, "maximum": 11 },
+          "name": { "type": "string", "description": "Tên cung (Mệnh, Phụ, Phúc...)" },
+          "zodiacSign": { "type": "string", "description": "Địa chi của cung (Tý, Sửu...)" },
+          "stars": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "type": { "enum": ["ChinhTinh", "PhuTinh"] },
+                "element": { "type": "string" },
+                "status": { "type": "string", "description": "Đắc, Hãm, Bình, Vượng..." },
+                "isMajor": { "type": "boolean" }
+              }
+            }
+          },
+          "isBodyPalace": { "type": "boolean", "description": "Cung Thân nằm ở đây" }
+        }
+      }
+    },
+    "aiInterpretation": {
+      "type": "object",
+      "properties": {
+        "summary": { "type": "string" },
+        "karmicAnalysis": { "type": "string", "description": "Luận giải theo góc nhìn Nhân Quả" },
+        "advice": { "type": "string" }
+      }
+    }
+  }
+}

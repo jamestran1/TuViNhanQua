@@ -1,0 +1,32 @@
+# .NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+build/
+.env*.local
+.vercel
+
+# MAUI / Mobile
+*.apk
+*.aab
+*.ipa
+*.app
+*.appd
+*.dsym
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
