@@ -1,12 +1,13 @@
-import React from 'react';
+'use client';
+
+import React, { memo } from 'react';
 import { Palace, Star } from '../types/tuvi';
 
 interface PalaceCardProps {
   palace: Palace;
 }
 
-export default function PalaceCard({ palace }: PalaceCardProps) {
-  // Lọc chính tinh và phụ tinh
+const PalaceCard = memo(({ palace }: PalaceCardProps) => {
   const majorStars = palace.stars.filter(s => s.isMajor);
   const minorStars = palace.stars.filter(s => !s.isMajor);
 
@@ -17,20 +18,21 @@ export default function PalaceCard({ palace }: PalaceCardProps) {
         <span className="text-xs text-slate-400">{palace.zodiacSign}</span>
       </div>
       
-      {/* Chính Tinh */}
-      <div className="flex flex-col space-y-1 mb-2 flex-grow">
+      <div className="flex flex-col space-y-1 mb-2 flex-grow overflow-hidden">
         {majorStars.map((star, idx) => (
           <div key={idx} className="flex justify-between items-center">
-            <span className="text-red-400 font-semibold text-sm">{star.name}</span>
-            <span className="text-xs text-slate-500">({star.status})</span>
+            <span className="text-red-400 font-semibold text-[11px] truncate">{star.name}</span>
+            <span className="text-[9px] text-slate-500">({star.status})</span>
           </div>
         ))}
       </div>
 
-      {/* Phụ Tinh (rút gọn) */}
-      <div className="text-xs text-slate-400 truncate mt-auto">
+      <div className="text-[10px] text-slate-400 truncate mt-auto">
         {minorStars.map(s => s.name).join(', ')}
       </div>
     </div>
   );
-}
+});
+
+PalaceCard.displayName = 'PalaceCard';
+export default PalaceCard;
