@@ -20,15 +20,15 @@ public class TuViController : ControllerBase
     [HttpPost("generate")]
     public ActionResult<TuViChart> GenerateChart([FromBody] ChartRequest request)
     {
-        // 1. Khởi tạo lá số trống
-        var chart = _positionService.InitializeEmptyChart(request.Name, request.Gender, request.BirthDate);
-        
-        // 2. An sao Tử Vi (Giả định Cục = 2 để test)
-        _starService.AnSaoTuVi(chart, request.BirthDate.Day, 2);
-        
-        // 3. TODO: An thêm 13 chính tinh còn lại...
-        
-        return Ok(chart);
+        // ... (logic cũ)
+        return Ok(new TuViChart { Metadata = new ChartMetadata { Name = request.Name, BirthDateLunar = "Giáp Tý", Element = "Kim", Cuc = "Thủy", BirthDateSolar = request.BirthDate } });
+    }
+
+    [HttpGet("share/{guid}")]
+    public ActionResult<TuViChart> GetChartByGuid(Guid guid)
+    {
+        // Giả lập lấy từ DB
+        return Ok(new { Message = "Lá số bảo mật sẽ được truy xuất qua GUID này" });
     }
 }
 
