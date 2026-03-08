@@ -4,11 +4,31 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TuVi.Mobile"
-    Title="TuVi.Mobile">
+    Shell.FlyoutBehavior="Flyout"
+    Title="Tử Vi Nhân Quả"
+    FlyoutBackgroundColor="#1e1b4b">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#1e1b4b" HeightRequest="200">
+            <Label Text="Tử Vi Nhân Quả" 
+                   TextColor="#fbbf24" 
+                   FontSize="24" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontAttributes="Bold" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Mệnh Bàn" Icon="stars_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="AI Luận Giải" Icon="ai_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Gieo Nhân Lành" Icon="lotus_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
 
 </Shell>
